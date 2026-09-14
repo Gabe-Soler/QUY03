@@ -5,7 +5,9 @@ conventions live in the root `CLAUDE.md`.
 
 ## Course info
 
-- **Course code / name:** CMPE 365 (cross-listed as CISC 365 in some calendars) — Algorithms
+- **Course code / name:** CMPE 365 — Algorithms. **Also called CISC 365**, where it is titled
+  *Algorithms I*; the lecture slides are headed "CISC 365 - Algorithms I". Treat the two codes as
+  the same course — material, OnQ pages and emails may use either, and the slides use CISC.
 - **Official description:** Mathematics for order-of-growth analysis and recurrences to
   characterize algorithm running times. Different algorithmic design techniques and their
   optimality guarantees. Complexity theory and NP-completeness (decision algorithms, verification

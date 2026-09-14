@@ -31,16 +31,27 @@ course-notes/
 │       ├── problem-sets/
 │       ├── summaries/
 │       ├── references/        # textbooks, solution manuals — source material, not course notes
+│       ├── code/              # source files handed out in lecture, kept compilable + an index
 │       └── */assets/{note}/   # figures extracted from a note's source, linked from that note
 └── glossary.md                # optional cross-course term index
 ```
 
 - **Course slugs** are lowercase-kebab-case (e.g. `linear-algebra`, `stochastic-processes`).
+- **Cross-listed courses keep one folder, under the CMPE code** (`cmpe-320`, `cmpe-365`), since
+  that is the code Gabe is registered under. Their CISC names are aliases, not separate courses:
+  a file, search or question mentioning **CISC 320** or **CISC 365** refers to `cmpe-320` and
+  `cmpe-365`. Course material arrives labelled with the CISC code more often than the CMPE one,
+  so expect filenames and slide headers to say CISC.
 - **Filed note filenames** follow: `YYYY-MM-DD-lectureNN-short-topic.md` (e.g.
   `2026-09-15-lecture03-eigenvalues.md`). Problem sets: `psNN-short-topic.md`. Summaries:
   `unitNN-short-topic-summary.md`.
 - **Reference material** (textbooks, solution manuals) goes in `courses/{slug}/references/`.
   Book-length sources are split one file per chapter into a subfolder with an `00-index.md`.
+- **Source code handed out in lecture** goes in `courses/{slug}/code/`, **left in its original
+  language, not converted to Markdown** — it is already plain text and greppable, and it has to
+  stay compilable. Write one `00-index.md` there instead, describing what each file demonstrates
+  and how to build it. This is the one exception to the everything-becomes-Markdown rule, and it
+  exists because converting code would destroy the thing that makes it useful.
 - **Frontmatter** on every filed note:
   ```yaml
   ---
@@ -55,8 +66,11 @@ course-notes/
 
 ## Current courses
 
-- `courses/cmpe-320/` — Fundamentals of Software Development (C++, OOP, software project mgmt)
-- `courses/cmpe-365/` — Algorithms (order of growth, recurrences, NP-completeness, graph algos)
+- `courses/cmpe-320/` — Fundamentals of Software Development (C++, OOP, software project mgmt).
+  **Also called CISC 320** — the course is cross-listed and its own material is labelled
+  "CISC/CMPE 320".
+- `courses/cmpe-365/` — Algorithms (order of growth, recurrences, NP-completeness, graph algos).
+  **Also called CISC 365** — cross-listed; the lecture slides are titled "CISC 365 - Algorithms I".
 - `courses/elec-371/` — Microprocessor Interfacing and Embedded Systems
 - `courses/enph-334/` — Electronics for Applied Scientists (linear circuits, op-amps, feedback)
 - `courses/mthe-326/` — Functions of a Complex Variable (complex analysis)

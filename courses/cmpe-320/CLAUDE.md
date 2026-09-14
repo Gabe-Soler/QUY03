@@ -5,7 +5,10 @@ conventions live in the root `CLAUDE.md`.
 
 ## Course info
 
-- **Course code / name:** CMPE 320 — Fundamentals of Software Development
+- **Course code / name:** CMPE 320 — Fundamentals of Software Development.
+  **Also called CISC 320**: the course is cross-listed and the Fall 2026 syllabus is titled
+  "CISC/CMPE 320". Treat the two codes as the same course — material, OnQ pages and emails may use
+  either, and most use CISC.
 - **Official description:** Introduction to management of small- and medium-scale software
   projects. Advanced programming methodology using C++. Includes a significant programming
   project.
@@ -41,6 +44,10 @@ conventions live in the root `CLAUDE.md`.
 
 ## Reference materials
 
+- `code/` - demo programs handed out in lecture, kept as `.cpp` with `code/00-index.md` describing
+  each. **They are deliberate gotcha demos**: several read or write memory they don't own and one
+  dereferences a null pointer on purpose, so crashes and garbage output are the intended lesson.
+  Build with `g++ -std=c++14 -Wall`.
 - `references/syllabus-f2026.md` (+ `.pdf`) - the Fall 2026 syllabus, converted. Holds the full
   week-by-week schedule, every deadline, the marking scheme and the late policy. **Check it before
   answering anything about dates or weighting.** It also flags an apparent error in the source
@@ -75,12 +82,20 @@ conventions live in the root `CLAUDE.md`.
 
 Update every time new lecture material is filed (the `file-notes` skill does this automatically).
 
-*Nothing has been filed from lectures yet - the entries below come from the syllabus schedule, so
-they say what is planned, not what was actually delivered. Replace them as real notes land.*
-
-- **Week 1 (Sep 8, Tue start):** introduction, setup, history, basics.
-- **Week 2 (Sep 14):** data types, pointers, arrays. *(current week as of filing)*
-- **Week 3 (Sep 21):** agile, parameter passing, operators, loops, string. Assignment 1 due Sep 23.
+- **Lecture 1 (2026-09-09):** course admin - grading scheme (30% assignments / 35% project /
+  35% final), assignment rules and the one-week emergency period, the "discuss but don't copy"
+  integrity line, agile team project assigned by the Head TA, TA groups G1-G5.
+- **Lecture 2 (2026-09-11):** setting up a C++ environment - editors vs IDEs, GCC and `g++`,
+  `g++ file.cpp -o file.out`, MinGW on Windows / `xcode-select --install` on macOS, the
+  Eclipse + MinGW "safe configuration" (Windows-only), Hello World, and noteQ.
+- **Lecture 3 (2026-09-14):** a bit of history - BCPL (1966, O-code and portability) → B (1969,
+  Thompson) → C (1972, Ritchie, ANSI C) → "C with classes" (Stroustrup, 1979) → C++ (1983);
+  the standards timeline through C++20; and the design philosophy, notably that C++ "gives the
+  programmer a choice, even if this makes it possible to choose incorrectly".
+- **Assignment 1 issued** - Shakespearean insult generator, due **Wed 23 Sep 23:59**, out of 20.
+  See `problem-sets/ps01-insult-generator.md`.
+- **Next up:** "Basics" - data types, pointers, arrays. The demo programs in `code/` belong to it
+  and are already filed, so they can be read before the lecture.
 
 ## Known trouble spots
 
