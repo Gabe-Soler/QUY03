@@ -120,7 +120,10 @@ Update every time new lecture material is filed (the `file-notes` skill does thi
   the standards timeline through C++20; and the design philosophy, notably that C++ "gives the
   programmer a choice, even if this makes it possible to choose incorrectly".
 - **Assignment 1 issued** - Shakespearean insult generator, due **Wed 23 Sep 23:59**, out of 20.
-  See `assignments/assignment_1/instructions.md`.
+  See `assignments/assignment_1/instructions.md`. Both supplied files are filed beside it; the
+  note carries the full API contract read off `TestInsultGenerator.cpp`. **The data file must be
+  opened as `InsultsSource.txt`** - it downloaded under a different name, and `initialize()` takes
+  no arguments so the filename is hardcoded in Gabe's implementation.
 - **Next up:** "Basics" - data types, pointers, arrays. The demo programs in `code/` belong to it
   and are already filed, so they can be read before the lecture.
 

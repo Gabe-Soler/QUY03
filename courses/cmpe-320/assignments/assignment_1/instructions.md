@@ -23,13 +23,69 @@ exception classes · `const` correctness · generating random integers.
 |---|---|---|
 | **Write** | `insultgenerator_netid.h` | document this one |
 | **Write** | `insultgenerator_netid.cpp` | basic comments are enough |
-| Given | `TestInsultGenerator.cpp` | only change the `#include` to your netid |
-| Given | `InsultsSource.txt` | tab-delimited, 50 words per column |
+| Given | [`TestInsultGenerator.cpp`](TestInsultGenerator.cpp) | filed here — only change the `#include` to your netid |
+| Given | [`InsultsSource.txt`](InsultsSource.txt) | filed here — tab-delimited, 50 rows × 3 columns |
 
-> **Neither given file is in this repo yet** — `TestInsultGenerator.cpp` and `InsultsSource.txt`
-> are linked from OnQ. Drop them in `inbox/` and run `/organize`; they belong in **this folder**,
-> beside these instructions, along with the two files you write
-> (`insultgenerator_netid.h` / `.cpp`).
+Both supplied files are now in this folder. Write your `insultgenerator_netid.h` and
+`insultgenerator_netid.cpp` here too, so the whole assignment builds in place:
+
+```bash
+g++ -std=c++14 -Wall TestInsultGenerator.cpp insultgenerator_netid.cpp -o test.out && ./test.out
+```
+
+> ✅ **Filename spelling resolved.** The instructions call the test file
+> `TestInsutGenerator.cpp` (missing the `l`). The real file is spelled **`TestInsultGenerator.cpp`**
+> — the instructions have the typo, not the file.
+
+> ⚠️ **The data file was renamed when filing, and this matters.** It downloaded as
+> `insults_source.txt`, but both the assignment instructions and the comment inside
+> `TestInsultGenerator.cpp` call it **`InsultsSource.txt`**. Since `initialize()` takes **no
+> arguments**, the filename is hardcoded inside *your* implementation — so it must match whatever
+> the grader has. The two names differ by more than capitalisation (`insults_source` vs
+> `InsultsSource`), so a case-insensitive macOS filesystem will **not** paper over the difference.
+> Filed under `InsultsSource.txt` because two independent sources use that name. If OnQ really does
+> distribute it lowercase, rename it back and open that name instead.
+
+## The API the test program requires
+
+The supplied test file is the real specification — it pins down every public member. Read it
+before designing the class.
+
+| Member | Signature implied by the test | Throws |
+|---|---|---|
+| constructor | `InsultGenerator ig;` — default, no args | |
+| `initialize()` | no args; loads the phrases from `InsultsSource.txt` into the attributes | `FileException` |
+| `talkToMe()` | returns **one** random insult as a `string` | |
+| `generate(int)` | returns `vector<string>` of that many **unique** insults, alphabetical | `NumInsultsOutOfBounds` |
+| `generateAndSave(string, int)` | filename + count; writes them **in alphabetical order** | `NumInsultsOutOfBounds`, `FileException` |
+
+Details the test makes non-negotiable:
+
+- **Exceptions are caught by reference** (`catch (FileException& e)`) and **`e.what()` is called**,
+  so both exception classes need a `what()` — derive from `std::exception` and override it.
+- The bounds are probed with **`generate(-100)`** and **`generate(40000)`**, and
+  `generateAndSave("Nothing.txt", 40000)` — so the check belongs in *both* generating methods, not
+  just one. Legal range is **1 to 10,000 inclusive**.
+- `generate(100)` is indexed with `insults[i]` for `i` in `0..99`, so the vector must have exactly
+  the requested size.
+- The timed call is `generate(10000)` and the result is printed via `insults.size()` — which must
+  report 10,000.
+- Timing uses `clock()` from `<time.h>` and prints milliseconds.
+- The test writes `SavedInsults.txt` into the working directory.
+
+## The data file
+
+50 rows × 3 tab-separated columns, 50 unique words in each column:
+
+```
+artless         base-court      apple-john
+bawdy           bat-fowling     baggage
+beslubbering    beef-witted     barnacle
+```
+
+$50^3 = 125{,}000$ possible insults; you need at most 10,000 of them, so the set stays at an 8%
+load factor — rejection sampling will not degrade badly, but it is still worth thinking about the
+sorted-and-unique requirement up front.
 > (The instructions spell the test file `TestInsutGenerator.cpp`, missing the `l` — check the
 > actual name on OnQ before writing the `#include`.)
 
