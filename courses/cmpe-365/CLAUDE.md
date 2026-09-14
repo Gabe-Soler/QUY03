@@ -13,7 +13,11 @@ conventions live in the root `CLAUDE.md`.
   optimality guarantees. Complexity theory and NP-completeness (decision algorithms, verification
   algorithms, complexity classes, reductions). Graph algorithms and their running times.
 - **Format:** Lec 3, Lab 1
-- **Prerequisites:** ELEC 278 or MREN 178; ELEC 270 or a discrete mathematics course
+- **Prerequisites:** **ELEC 278 or MREN 178; ELEC 270 or a discrete mathematics course** - this is
+  the CMPE/Math & Eng route, the one that applies to Gabe. The Fall 2026 syllabus is written from
+  the CISC side and instead requires **registration in a School of Computing plan plus a C- or
+  higher in CISC 203, 204 and 235**. Recorded here so the difference isn't mistaken for an error -
+  same situation as CMPE/CISC 320.
 - **Exclusions:** ELEC 226
 - **Typical topics** (fill in / correct against your actual syllabus): asymptotic notation
   (Big-O/Θ/Ω), recurrence relations (substitution, recursion tree, master theorem), divide and
@@ -24,16 +28,30 @@ conventions live in the root `CLAUDE.md`.
 - **Term:** Fall 2026
 - **Lectures:** Stirling Room B - **Mon 11:30-12:20, Tue 13:30-14:20, Thu 12:30-13:20**. Slides
   are posted *before* each lecture, and go on OnQ; MS Teams for discussion.
-- **Assessment: five tests, 20% each. No midterm, no final exam, no make-up tests.**
-  Dates: **Sep 24, Oct 8, Oct 29, Nov 12, Dec 1** - one per topic. This differs sharply from the
-  usual assignment/exam split, so *every* test is worth a fifth of the grade.
+- **Assessment: five in-class tests, 20% each. No assignments, no midterm, no final exam.**
+  Dates: **Thu 24 Sep, Thu 8 Oct, Thu 29 Oct, Thu 12 Nov, and Tue 1 Dec** - one per topic, and note
+  **the last one is a Tuesday while the other four are Thursdays**. Every test is worth a fifth of
+  the grade and the syllabus offers no make-up mechanism.
+  **Remark requests** go to `cisc365@cs.queensu.ca` **within 5 calendar days** of grades being
+  posted; late requests are not considered.
+- **Office hours:** instructor **Tue 14:30-15:20**, TA **Thu 17:00-18:00** - both in **Goodwin 536**
+  and on MS Teams (channels "Office hour with Instructor" / "Office hour with TA").
+- **Contact protocol (mandatory):** email `cisc365@cs.queensu.ca` or `yuanzhu.chen@queensu.ca` -
+  **not OnQ** - with **"CISC365" in the subject** and **name and student number in the body**.
+  TAs: Felix Xing, James Song, Mohamed Harmanani.
 - **Textbook:** CLRS 4th ed. (3rd ed. accepted) - the filed copy is 4th ed.
 - **Topic order:** 1a algorithm complexity (ch. 2-3) → 2 divide-and-conquer (ch. 4) → 3 greedy
   (ch. 15) → 4 dynamic programming (ch. 14) → 5 branch-and-bound → 1b NP-completeness (ch. 34).
   Chapter numbers are 4th-edition; in the 3rd edition DP and greedy are 15 and 16.
+  **NP-completeness is numbered "1b" but taught last**, in weeks 12-13 after branch-and-bound, even
+  though the learning outcomes list it first. **Week 6 is the fall reading break.**
 
 ## Reference materials
 
+- `references/syllabus-f2026.md` (+ `.pdf`) - the Fall 2026 syllabus (v02, revised 9 Sep 2026),
+  converted and restructured. **Check it before answering anything about dates or weighting.** It
+  **confirms** the assessment scheme and all five test dates that were previously recorded here from
+  the lecture 1 slides.
 - `references/clrs-4e/` - Cormen, Leiserson, Rivest & Stein, *Introduction to Algorithms*, 4th ed.
   (MIT Press, 2022), converted to Markdown and split one file per chapter, with `00-index.md` as
   the contents page. **Grep this** for anything in the course: asymptotics and recurrences
