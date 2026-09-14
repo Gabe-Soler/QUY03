@@ -18,8 +18,17 @@ conventions live in the root `CLAUDE.md`.
   conquer, greedy algorithms, dynamic programming, graph algorithms (traversal, shortest path,
   spanning trees), NP-completeness and reductions, convex hull, activity selection, longest common
   subsequence.
-- **Professor:**
-- **Term:**
+- **Professor:** Yuanzhu Chen (`yuanzhu.chen@queensu.ca`), with Xu Wang (`xw41@queensu.ca`).
+- **Term:** Fall 2026
+- **Lectures:** Stirling Room B - **Mon 11:30-12:20, Tue 13:30-14:20, Thu 12:30-13:20**. Slides
+  are posted *before* each lecture, and go on OnQ; MS Teams for discussion.
+- **Assessment: five tests, 20% each. No midterm, no final exam, no make-up tests.**
+  Dates: **Sep 24, Oct 8, Oct 29, Nov 12, Dec 1** - one per topic. This differs sharply from the
+  usual assignment/exam split, so *every* test is worth a fifth of the grade.
+- **Textbook:** CLRS 4th ed. (3rd ed. accepted) - the filed copy is 4th ed.
+- **Topic order:** 1a algorithm complexity (ch. 2-3) → 2 divide-and-conquer (ch. 4) → 3 greedy
+  (ch. 15) → 4 dynamic programming (ch. 14) → 5 branch-and-bound → 1b NP-completeness (ch. 34).
+  Chapter numbers are 4th-edition; in the 3rd edition DP and greedy are 15 and 16.
 
 ## Reference materials
 
@@ -40,8 +49,14 @@ conventions live in the root `CLAUDE.md`.
 
 ## Notation / conventions specific to this professor
 
-(e.g. specific pseudocode style used in lecture, specific proof-writing conventions for
-correctness/complexity proofs)
+- **Pseudocode follows CLRS 3rd edition, not the 4th edition that is filed here.** Lecture 2 writes
+  `INSERTION-SORT(A)` with the **outer** loop index $j$ and the **inner** index $i$; CLRS 4e writes
+  `INSERTION-SORT(A, n)` with outer $i$ and inner $j$ - **the two indices are swapped**. Use the
+  professor's form in tests, and expect the letters to flip when reading the filed textbook.
+- Array indices run **1 to `A.length`**, not from 0.
+- Set membership and equality are both used for asymptotic classes: $f(n) \in \Theta(g(n))$ and
+  $f(n) = \Theta(g(n))$ are treated as interchangeable.
+- Definitions are stated with **"positive constants"** (reals), never "positive integers".
 
 ## Covered so far
 
@@ -60,11 +75,21 @@ recursion/recurrence understanding from earlier weeks).
   $T(n) = an^2 + bn + c$ worst case; why worst case is the default; order of growth and
   $\Theta$-notation; merge sort and divide-and-conquer, with
   $T(n) = 2T(n/2) + \Theta(n) \to \Theta(n \lg n)$ argued from the recursion tree.
+- **Lecture 1 (2026-09-08):** course admin, what an algorithm is (informal and formal definitions,
+  emphasis on *halts in finite time*), the five topics, class schedule and test dates.
+- **Lecture 2 (2026-09-10):** algorithm correctness ("for every input instance, halts with the
+  correct output"); choosing between correct algorithms on understanding / elegance / efficiency;
+  the insertion-sort cost-and-times table; $t_j$ and the best case $\Theta(n)$ vs worst case
+  $\Theta(n^2)$; why worst case is the default; order of growth; the rules for analysing
+  sequences, loops and conditionals.
 - **Lecture 3 (2026-09-14):** asymptotic notation proper - order of growth (lower-order terms
   don't matter); formal set-builder definitions of $\Theta$, $O$ and $\Omega$; worked
   $\tfrac{1}{2}n^2 - 3n = \Theta(n^2)$ example with explicit constants; Theorem 3.1
-  ($f = \Theta(g) \iff f = O(g)$ and $f = \Omega(g)$). Filed note has been through
-  `/clean_lecture` against CLRS ch. 3.
+  ($f = \Theta(g) \iff f = O(g)$ and $f = \Omega(g)$). The slides go further than Gabe's own note:
+  the counterexample $6n^3 \ne \Theta(n^2)$, the general quadratic theorem, **asymptotic notation
+  inside equations**, and **transitivity / reflexivity / symmetry** (notably
+  $f = O(g) \iff g = \Omega(f)$). The slide deck's two sets of practice questions are the most
+  test-like material available so far - **use them for `quiz-me` before the Sep 24 test.**
 - **Not yet covered:** solving recurrences (ch. 4), referenced forward by the ch. 2 summary but not
   yet taught.
 

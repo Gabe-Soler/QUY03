@@ -20,7 +20,8 @@ course-notes/
 ├── CLAUDE.md                  # this file — always loaded
 ├── .claude/
 │   ├── skills/                # workflows Claude reaches for automatically when relevant
-│   └── commands/               # slash commands triggered explicitly (/organize, /review)
+│   └── commands/               # slash commands triggered explicitly (/organize, /review,
+│                               #   /clean_lecture)
 ├── inbox/                     # raw, unfiled captures land here — lecture transcripts,
 │                               # phone photos of whiteboards, scratch notes, voice-memo transcripts
 ├── courses/
@@ -84,6 +85,19 @@ report — that's an acceptable outcome, not a failure. Claude should **file ful
 approval first**, then report back exactly what it did (old path → new path, one line each) so it
 can be reviewed after the fact and reverted via git if something was misfiled. Never leave content
 unfiled in the inbox "to be safe" — take a best-guess action and report it.
+
+## Lecture notes taken live
+
+Notes typed during a lecture are expected to be rough — gaps where the lecture outran the typing,
+LaTeX written at speaking speed, and the occasional thing written down wrong. That is fine; the
+capture is the point.
+
+`/clean_lecture` (see `.claude/skills/clean-lecture/SKILL.md`) reconciles such a note against that
+lecture's slides and the course's filed reference material. It fixes malformed LaTeX silently,
+**marks** anything it adds from a source, and **flags rather than rewrites** anything where the
+note and the source disagree — because the professor may have corrected the slides out loud, and
+because a note quietly edited into agreement with the textbook hides the misunderstanding that
+most needs finding before the exam.
 
 ## How to teach / explain concepts
 

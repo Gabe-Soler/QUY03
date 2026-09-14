@@ -30,8 +30,11 @@ $$\Theta(g(n)) = \{\, f(n) : \text{there exist constants } c_1, c_2, n_0 \text{ 
 > $\mathbb{Z}^+$ (positive *integers*). CLRS §3.2 says **positive constants**, i.e. positive reals.
 > This matters, and your own Example 1 below is the proof: it lands on $c_1 = 1/5$ and
 > $c_2 = 1/2$, neither of which is an integer. If the constants had to be integers, no $c_1$ would
-> exist for that example at all. I've written the definition without "$\in \mathbb{Z}^+$" — if the
-> professor really did say integers, tell me and I'll put it back with a note.
+> exist for that example at all.
+>
+> **Confirmed against the slides (filed 2026-09-14).** Slide 4 of `L03 AsymptoticNotations.pdf`
+> reads "there exist **positive constants** $c_1$, $c_2$, and $n_0$" — so "$\in \mathbb{Z}^+$" was
+> yours, not the professor's. Definition corrected here.
 
 - $f(n)$ will be tightly bounded by $c_1 g(n)$ and $c_2 g(n)$.
 
@@ -77,6 +80,10 @@ $$c_1 \le \tfrac{1}{2} - \tfrac{3}{10} \le c_2 \quad\Longrightarrow\quad c_1 \le
 > The trap: plugging in a single $n$ pins down $c_1$ (because $h$ increases away from $n_0$) but
 > tells you nothing about $c_2$ (because $h$ keeps growing). Check which direction your function
 > moves before reusing one substitution for both constants.
+>
+> **Confirmed against the slides.** The deck stops at $c_1 \le \tfrac12 - \tfrac3n \le c_2$ and
+> never substitutes a value — **the $n = 10$ step and the "$\ge 1/5$" conclusion are both yours.**
+> So this is your own inference to correct, not something mis-copied from the board.
 
 **Conclusion:** $c_1 = \tfrac{1}{5}$, $c_2 = \tfrac{1}{2}$, $n_0 = 10$ satisfy the definition, so
 $\tfrac{1}{2}n^2 - 3n = \Theta(n^2)$.
@@ -138,8 +145,20 @@ $$f(n) = \Theta(g(n)) \iff f(n) = O(g(n)) \text{ and } f(n) = \Omega(g(n))$$
 
 ---
 
-**Source note.** CMPE 365 has no slides filed, so this pass was checked against
-[`../references/clrs-4e/06-3-characterizing-running-times.md`](../references/clrs-4e/06-3-characterizing-running-times.md)
-(CLRS §3.1–3.2). The $\tfrac{1}{2}n^2 - 3n$ example is **not** in CLRS 4th ed. — it appears in the
-3rd edition — so it's the professor's own, and was checked mathematically rather than against a
-source.
+**Source note.** Originally cleaned against CLRS §3.1–3.2 only, because no slides were filed at the
+time. The slides arrived later the same day and are now filed as
+[`2026-09-14-lecture03-asymptotic-notations-slides.md`](2026-09-14-lecture03-asymptotic-notations-slides.md)
+— **all three flags above were re-checked against them and all three hold.** The
+$\tfrac{1}{2}n^2 - 3n$ example is not in CLRS 4th ed. (it is in the 3rd), but it *is* on the
+professor's slides, worked to the same point.
+
+**What the lecture covered that this note doesn't.** The slide deck goes further than these notes
+do — worth reading the rest of it before the Sep 24 test:
+
+- the counterexample $6n^3 \ne \Theta(n^2)$;
+- the general theorem $an^2 + bn + c = \Theta(n^2) = O(n^2) = \Omega(n^2)$, of which your
+  Example 1 is the case $a = \tfrac12, b = -3, c = 0$;
+- **using asymptotic notation inside equations** ($2n^2 + 3n + 1 = 2n^2 + \Theta(n) = \Theta(n^2)$);
+- **properties**: transitivity, reflexivity, and symmetry — including
+  $f = O(g) \iff g = \Omega(f)$, i.e. $O$ and $\Omega$ are duals;
+- two sets of practice questions, which are the most test-like material available so far.
