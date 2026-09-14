@@ -55,7 +55,9 @@ discoverable, and the report says plainly that it wasn't converted and why.
    - Preserve the original structure/order of the material — don't reorganize the professor's
      sequence of ideas.
 6. **Write the frontmatter block** per the schema in root `CLAUDE.md`.
-7. **Place the note** in `courses/{slug}/{lectures|problem-sets|summaries|references}/` with the
+7. **Place the note** in `courses/{slug}/{lectures|problem-sets|summaries|references}/` — but
+   **read the course's own `CLAUDE.md` first: a course may define a different layout, and it
+   wins.** (`cmpe-320` uses `assignments/assignment_N/` rather than `problem-sets/`.) Place it with the
    correct filename, its figures in `assets/{note-stem}/` beside it, and **the original file
    beside the note under the same basename** (e.g. `ps00-lab-a0-ltspice-simulation.md` next to
    `ps00-lab-a0-ltspice-simulation.pdf`). Move the original out of `inbox/` — don't copy it.

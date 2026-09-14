@@ -8,7 +8,7 @@ tags: [assignment-1, cpp-classes, references, member-functions, vectors, strings
 # CMPE 320 — Assignment 1: Shakespearean Insult Generator
 
 > **Due Wednesday 23 September 2026, 23:59** (per
-> [`../references/syllabus-f2026.md`](../references/syllabus-f2026.md)), with the automatic
+> [`../../references/syllabus-f2026.md`](../../references/syllabus-f2026.md)), with the automatic
 > one-week emergency period after that. **Out of 20.** Submit only
 > `insultgenerator_netid.h` and `insultgenerator_netid.cpp` to OnQ.
 
@@ -27,7 +27,9 @@ exception classes · `const` correctness · generating random integers.
 | Given | `InsultsSource.txt` | tab-delimited, 50 words per column |
 
 > **Neither given file is in this repo yet** — `TestInsultGenerator.cpp` and `InsultsSource.txt`
-> are linked from OnQ. Drop them in `inbox/` and run `/organize` to file them alongside this note.
+> are linked from OnQ. Drop them in `inbox/` and run `/organize`; they belong in **this folder**,
+> beside these instructions, along with the two files you write
+> (`insultgenerator_netid.h` / `.cpp`).
 > (The instructions spell the test file `TestInsutGenerator.cpp`, missing the `l` — check the
 > actual name on OnQ before writing the `#include`.)
 

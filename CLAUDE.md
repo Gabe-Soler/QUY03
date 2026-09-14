@@ -47,6 +47,10 @@ course-notes/
   `unitNN-short-topic-summary.md`.
 - **Reference material** (textbooks, solution manuals) goes in `courses/{slug}/references/`.
   Book-length sources are split one file per chapter into a subfolder with an `00-index.md`.
+- **A course may override this layout** in its own `CLAUDE.md`, and that override wins for files
+  in that course. `cmpe-320` does: it uses `assignments/assignment_N/` (one folder per assignment,
+  holding the handout plus every supplied and written source file) instead of `problem-sets/`.
+  Check the course's `CLAUDE.md` before filing into it.
 - **Source code handed out in lecture** goes in `courses/{slug}/code/`, **left in its original
   language, not converted to Markdown** — it is already plain text and greppable, and it has to
   stay compilable. Write one `00-index.md` there instead, describing what each file demonstrates

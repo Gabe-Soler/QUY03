@@ -42,6 +42,33 @@ conventions live in the root `CLAUDE.md`.
   vendored `Cpp-Learing-Archive/` takes its worked source from, so that folder is directly useful
   for this course.
 
+## Folder layout for this course
+
+**This course uses `assignments/` instead of the repo-standard `problem-sets/`**, because each
+assignment is a small project with several files rather than a single write-up:
+
+```
+courses/cmpe-320/
+├── assignments/
+│   └── assignment_1/          # one folder per assignment, numbered with an underscore
+│       ├── instructions.md    # the handout, converted and annotated
+│       └── ...                # supplied files (TestInsultGenerator.cpp, InsultsSource.txt)
+│                              #   and Gabe's own source (insultgenerator_netid.h / .cpp)
+├── code/                      # demo programs from lecture, not assignment work
+├── lectures/
+├── references/
+└── summaries/
+```
+
+- **File assignment material into `assignments/assignment_N/`**, not `problem-sets/` — that folder
+  has been removed here so nothing lands in it by mistake. There are four assignments this term.
+- Keep everything for one assignment in its own folder: the handout, the files the course supplies,
+  and the files Gabe writes. That way the submission is self-contained and the whole folder can be
+  read at once when revising.
+- Frontmatter `type:` stays **`problem-set`** — the repo's schema is unchanged, only this course's
+  folder layout differs.
+- `code/` is for lecture demos and is *not* assignment work; don't mix the two.
+
 ## Reference materials
 
 - `code/` - demo programs handed out in lecture, kept as `.cpp` with `code/00-index.md` describing
@@ -93,7 +120,7 @@ Update every time new lecture material is filed (the `file-notes` skill does thi
   the standards timeline through C++20; and the design philosophy, notably that C++ "gives the
   programmer a choice, even if this makes it possible to choose incorrectly".
 - **Assignment 1 issued** - Shakespearean insult generator, due **Wed 23 Sep 23:59**, out of 20.
-  See `problem-sets/ps01-insult-generator.md`.
+  See `assignments/assignment_1/instructions.md`.
 - **Next up:** "Basics" - data types, pointers, arrays. The demo programs in `code/` belong to it
   and are already filed, so they can be read before the lecture.
 
