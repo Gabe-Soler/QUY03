@@ -75,6 +75,34 @@ conventions live in the root `CLAUDE.md`.
   preparation specifically. **Do tutorial questions and lab prep unaided first**; use this repo for
   `quiz-me` and for checking your own completed work, not for worked solutions.
 
+## Folder layout for this course
+
+**This course splits lab material into its own `labs/` folder**, because the labs are a major
+graded component rather than incidental to the lectures:
+
+```
+courses/elec-371/
+|-- labs/           # lab manuals, lab handouts, marking schemes, lab-book guidance
+|-- problem-sets/   # problem sets and tutorial/class problems, with their solutions beside them
+|-- lectures/
+|-- references/     # syllabus and other source material
+`-- summaries/
+```
+
+- **Labs go in `labs/`, problem sets in `problem-sets/`** - do not mix them. Anything issued as a
+  lab manual, lab handout or lab-assessment document is lab material even when it contains
+  problems to work through.
+- **Frontmatter `type:` stays `problem-set`** for lab material - the repo's schema in the root
+  `CLAUDE.md` is unchanged, only this course's folder layout differs. This follows the precedent
+  `cmpe-320` set with its `assignments/` folder.
+- **Solutions sit beside the thing they solve**, under the same basename plus `-solutions`, rather
+  than in `references/`. The root `CLAUDE.md` sends *book-length* solution manuals to `references/`;
+  a three-page solution set to one week's problems is far more useful adjacent to the problems.
+
+- The syllabus specifies **four in-person lab exercises**; file each manual and handout here as
+  `lab-NN-short-topic.md` once issued.
+- `problem-sets/` is for tutorial questions and any posted problem sets.
+
 ## Notation / conventions specific to this professor
 
 (e.g. the specific instruction-set architecture / assembly syntax used, timing-diagram notation
