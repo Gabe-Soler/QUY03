@@ -88,8 +88,44 @@ It handles the things that silently corrupt naive PDF text extraction:
 - **Figures.** Embedded images are extracted to `assets/{note-stem}/` and linked inline at the
   page where they appeared. Non-web formats (TIFF etc.) are re-encoded to PNG so they render.
 - **Running heads and hard wrapping** are stripped, and paragraphs are rejoined.
+- **Structure.** Section headings come from the PDF outline, numbered algorithm listings are
+  rebuilt as ordered lists, running heads and page numbers are dropped, and `<` / `>` are escaped
+  so a Markdown renderer doesn't read the text as HTML and swallow the page.
 - **Long documents.** `--split-outline` writes one file per top-level PDF bookmark plus an index —
   use it for anything book-length instead of producing one enormous file.
+
+### Identifying symbol fonts
+
+Some TeX PDFs set their symbols in **Type3** fonts. These are the hard case: a Type3 glyph is a
+drawing program with no name, no font descriptor and a wrong-or-absent ToUnicode map, and each
+chapter gets its own subset — so the same codepoint is a minus sign in one chapter and a
+multiplication sign in the next. **No global character table can be correct**, and pdfium's text
+extraction drops these glyphs entirely rather than guessing.
+
+The only stable identity is the rendered shape, so `build_glyph_map.py` renders one instance of
+every (font, character) pair, clusters the images by appearance, and writes a contact sheet. You
+read the sheet once and name the clusters:
+
+```bash
+# 1. cluster and render the sheet
+python3 .claude/skills/file-notes/build_glyph_map.py BOOK.pdf --sheet /tmp/sheet.png
+
+# 2. look at the sheet, then name what you recognise
+python3 .claude/skills/file-notes/build_glyph_map.py BOOK.pdf \
+    --assign '{"0": "-", "1": "\\ge ", "3": "\\times "}' --out BOOK.glyphs.json
+
+# 3. convert; the map beside the PDF is picked up automatically
+python3 .claude/skills/file-notes/pdf_to_md.py BOOK.pdf --out note.md
+```
+
+Run it again with `--chars` for letters, because the symbol fonts reuse letter slots. In CLRS,
+`f`/`g` are braces, `W` is a colon, `b`/`c`/`d`/`e` are floor and ceiling brackets, and `h`/`i`
+are angle brackets — all invisible until you look at the sheet.
+
+Anything left unnamed renders as `{?}`, never as a guess. **A wrong symbol in a reference is worse
+than a visible gap**, because it reads as correct: the first pass of the CLRS conversion silently
+turned `n - 1` into `n \le 1` throughout, which is exactly the failure this workflow exists to
+prevent. Check the fidelity note at the top of a converted file to see what is still unresolved.
 
 **Always read the converted output before reporting.** For lecture and lab material the raw dump
 is a starting point, not the final note: rewrite it into the structure described in root

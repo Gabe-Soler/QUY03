@@ -27,12 +27,16 @@ conventions live in the root `CLAUDE.md`.
   (MIT Press, 2022), converted to Markdown and split one file per chapter, with `00-index.md` as
   the contents page. **Grep this** for anything in the course: asymptotics and recurrences
   (ch. 3-4), divide and conquer, greedy, DP, graph algorithms, NP-completeness.
-- `references/clrs-4e.pdf` - the original, kept as the reference copy. Needed for two things the
-  conversion can't give you: **figures** (CLRS draws them as vector graphics, so none were
-  extracted) and **checking ambiguous math**. The PDF's math fonts have a broken ToUnicode map;
-  the converter repairs the confirmed glyphs (`\Theta`, `\Omega`, `\le`, `\ge`, `(`/`)`, `/`, `=`)
-  but a few stay ambiguous and are listed in a warning block at the top of each chapter file - the
-  common one is `1`, which is sometimes the digit and sometimes $\infty$.
+- `references/clrs-4e.pdf` - the original, kept as the reference copy. Still needed for **figures**:
+  CLRS draws them as vector graphics, so none could be extracted. A "Figure N.M" reference in the
+  Markdown means opening the PDF at the page named at the top of that chapter file.
+- `references/clrs-4e.glyphs.json` - the symbol table for the PDF's Type3 fonts, built by
+  `.claude/skills/file-notes/build_glyph_map.py`. **Don't delete it**: without it the conversion
+  cannot tell a minus sign from a multiplication sign, because Type3 subsets assign codepoints
+  per chapter. Regenerating it means re-identifying the glyphs from a rendered contact sheet.
+- Math that could not be identified renders as `{?}` rather than a guess (about 730 spots, mostly
+  large summation and integral delimiters). Each chapter file opens with a note saying what is
+  unresolved in it.
 
 ## Notation / conventions specific to this professor
 
@@ -45,7 +49,19 @@ Update every time new lecture material is filed (the `file-notes` skill does thi
 This is especially important here since algorithms build cumulatively (e.g. DP relies on
 recursion/recurrence understanding from earlier weeks).
 
-- Week 1:
+- **Ch. 1 - The Role of Algorithms in Computing** (summarised 2026-09-10): problem vs. instance vs.
+  algorithm; correctness means halting *and* being right on every instance; asymptotic growth beats
+  hardware (the 10 billion vs 10 million instr/sec comparison, where the 1000x slower machine running
+  merge sort beats the fast one running insertion sort by 17x at $n = 10^7$); NP-completeness and
+  approximation; parallel and online algorithms as newer models.
+- **Ch. 2 - Getting Started** (summarised 2026-09-13): insertion sort as the incremental method;
+  **loop invariants** (initialization / maintenance / termination) as the correctness proof
+  technique; the **RAM model**; line-by-line counting giving $T(n) = an + b$ best case and
+  $T(n) = an^2 + bn + c$ worst case; why worst case is the default; order of growth and
+  $\Theta$-notation; merge sort and divide-and-conquer, with
+  $T(n) = 2T(n/2) + \Theta(n) \to \Theta(n \lg n)$ argued from the recursion tree.
+- **Not yet covered:** $\Theta$/$O$/$\Omega$ formal definitions (ch. 3) and solving recurrences
+  (ch. 4) - both are referenced forward by the ch. 2 summary but not yet summarised.
 
 ## Known trouble spots
 

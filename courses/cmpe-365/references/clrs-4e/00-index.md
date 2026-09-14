@@ -8,13 +8,9 @@ source: clrs-4e.pdf
 
 # Introduction to Algorithms, 4th ed. (Cormen, Leiserson, Rivest, Stein)
 
-Converted from `clrs-4e.pdf` (1312 pages), which is kept alongside this folder as the reference
-copy — check it whenever a formula here looks wrong.
+Converted from `clrs-4e.pdf` (1312 pages).
 
-Figures are **not** included: CLRS draws them as vector graphics, so there are no embedded images
-to extract. Any "Figure N.M" reference means opening `clrs-4e.pdf` at that page.
-
-> **Math fidelity:** this PDF uses subsetted TeX math fonts with a broken ToUnicode map. Confirmed glyphs were repaired automatically; these were ambiguous and left as-is, so check them against the source: `1` x11412, `` x1529, `˚` x124, `"` x73, `(` x47, `#` x22.
+> **Math fidelity.** This PDF sets its symbols in Type3 subset fonts whose private-use codepoints are assigned per subset, so the same code means different things in different chapters and cannot be decoded from the font alone. Letters, digits, brackets, fractions, superscripts and the named operators were repaired and are reliable. Every symbol that could not be identified is shown as `{?}` rather than guessed at - look it up in `clrs-4e.pdf` at the page given above. Unresolved here: `1` x11412, `{?}` x612, `˚` x124, `"` x73, `(` x47, `#` x22.
 
 ## Contents
 
