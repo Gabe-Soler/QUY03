@@ -8,18 +8,53 @@ conventions live in the root `CLAUDE.md`.
 - **Course code / name:** MTHE 326 (MATH 326) — Functions of a Complex Variable
 - **Official description:** Complex numbers, analytic functions, harmonic functions. Cauchy's
   theorem. Taylor and Laurent series. Calculus of residues. Rouché's theorem.
-- **Format:** Lec 3, Tut 0.5
-- **Prerequisites:** MTHE 280 (MATH 280), MTHE 281 (MATH 281)
-- **Typical topics** (fill in / correct against your actual syllabus): complex number arithmetic
-  and geometry, analytic/holomorphic functions and Cauchy-Riemann equations, harmonic functions,
-  contour integration, Cauchy's integral theorem and formula, Taylor and Laurent series
-  expansions, classification of singularities, calculus of residues, the residue theorem,
-  Rouché's theorem and argument principle, applications to evaluating real integrals.
-- **Professor:**
-- **Term:**
+- **Format:** Lectures **Mon 12:30-13:30, Thu 13:30-14:30, Fri 10:30-11:30**, tutorial
+  **Tue 9:30-10:30** - all in **Kingston Hall 201**. The outline says the tutorial is a **full
+  hour**, where the calendar says "Tut 0.5"; trust the outline. **3.0 units** as MATH 326,
+  **3.5 units** as MTHE 326.
+- **Prerequisites:** **MATH 281 / MTHE 281** only. *(This file previously said "MTHE 280 (MATH 280),
+  MTHE 281 (MATH 281)" from the calendar - the actual course outline lists 281 alone. Corrected
+  2026-09-14.)*
+- **Actual topics** (from the Fall 2026 outline, in the order they are treated):
+  1. **Complex numbers** - algebra, geometry, polar form, roots, topology of the complex plane.
+  2. **Analytic functions** - limits, differentiability, Cauchy-Riemann equations, harmonic functions.
+  3. **Elementary functions** - complex exponential, trigonometric and hyperbolic functions,
+     logarithms, powers, and **branches**.
+  4. **Complex integration** - contours and contour integrals, Cauchy's theorem, Cauchy's integral
+     formula.
+  5. **Power and Laurent series** - zeros and singularities.
+  6. **Residue theory** - evaluating real and complex integrals by residues.
+
+  Note that **Rouche's theorem and the argument principle appear in the calendar description but
+  not in the outline's topic list** - do not assume they are covered until they show up in lecture.
+- **Professor:** **Ivan Dimitrov** - `dimitrov@queensu.ca`, Jeffery Hall Rm 508, office hours
+  **Mon 11:00-12:00** and by appointment. Replies to email within **two business days**, and not in
+  evenings, on weekends, or on university holidays; maths questions are to go to office hours, the
+  tutorial, or the end of a lecture rather than email.
+- **Term:** Fall 2026 (8 September - 8 December 2026)
+- **Assessment:** 12 unannounced in-class quizzes, **best 8 count, 10%**; **Midterm 1 - Tue 6 Oct,
+  18:00-19:30, 20%**; **Midterm 2 - Wed 18 Nov, 18:00-19:30, 20%**; final exam **50%** (TBA within
+  10-23 Dec 2026). **Both midterms are evening sittings unrelated to the lecture slots.**
+  **There is no submitted homework at all** - problem sets are posted but never collected, so 100%
+  of the grade is written in person with no aids. Missing a midterm with an approved consideration
+  redistributes its weight proportionally; without one it is a zero. Regrade requests in writing
+  within one week.
+- **GenAI policy:** permitted **while studying** (exercises, problem sets, reading - no disclosure
+  required since none of it is submitted), and **prohibited on every assessment**, where no aids of
+  any kind are allowed. The instructor adds an unusually direct caution that these tools "routinely
+  produce confident, fluent, wrong complex analysis - mishandled branch cuts, invented residues,
+  contours that do not close, theorems applied where their hypotheses fail." **Lean on `quiz-me`
+  here and verify every worked contour integral by hand.** See `references/course-outline-f2026.md`
+  for the full quote.
 
 ## Reference materials
 
+- `references/course-outline-f2026.md` (+ `.pdf`) - the Fall 2026 course outline, converted and
+  restructured. **Check it before answering anything about dates or weighting.**
+- **Recommended textbook:** E.B. Saff and A.D. Snider, *Fundamentals of Complex Analysis*, 3rd ed.,
+  Pearson, 2003 - on reserve at Stauffer Library; $199.99 print / $71.99 for a 180-day e-book
+  rental. Not required, and no lecture notes will be posted. **The outline misspells the second
+  author as "Snyder"** - it is Snider, and it is the same book the solutions manual below covers.
 - `references/saff-snider-fundamentals-of-complex-analysis-solutions.pdf` - solutions manual for
   Saff & Snider, *Fundamentals of Complex Analysis with Applications to Engineering and Science*
   (Pearson, 2003). 243 pp. Solutions only; the main textbook is not in the repo.
@@ -42,7 +77,7 @@ specific contour-orientation conventions)
 Update every time new lecture material is filed (the `file-notes` skill does this automatically).
 All math in this course should be filed in LaTeX per the root `CLAUDE.md` rule.
 
-- Week 1:
+- Week 1: *(no lecture material filed yet - only the course outline)*
 
 ## Known trouble spots
 
