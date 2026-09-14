@@ -60,12 +60,28 @@ recursion/recurrence understanding from earlier weeks).
   $T(n) = an^2 + bn + c$ worst case; why worst case is the default; order of growth and
   $\Theta$-notation; merge sort and divide-and-conquer, with
   $T(n) = 2T(n/2) + \Theta(n) \to \Theta(n \lg n)$ argued from the recursion tree.
-- **Not yet covered:** $\Theta$/$O$/$\Omega$ formal definitions (ch. 3) and solving recurrences
-  (ch. 4) - both are referenced forward by the ch. 2 summary but not yet summarised.
+- **Lecture 3 (2026-09-14):** asymptotic notation proper - order of growth (lower-order terms
+  don't matter); formal set-builder definitions of $\Theta$, $O$ and $\Omega$; worked
+  $\tfrac{1}{2}n^2 - 3n = \Theta(n^2)$ example with explicit constants; Theorem 3.1
+  ($f = \Theta(g) \iff f = O(g)$ and $f = \Omega(g)$). Filed note has been through
+  `/clean_lecture` against CLRS ch. 3.
+- **Not yet covered:** solving recurrences (ch. 4), referenced forward by the ch. 2 summary but not
+  yet taught.
 
 ## Known trouble spots
 
 Concepts flagged as weak from prior `quiz-me` sessions — NP-completeness proofs and recurrence
 solving are common sticking points in this course, worth watching for.
+
+- **Choosing $c_2$ in a $\Theta$ proof** (from lecture 3, 2026-09-14). Substituting a single value
+  of $n$ pins down the *lower* constant $c_1$ but not the *upper* constant $c_2$: when the ratio
+  $f(n)/g(n)$ is increasing, $c_2$ has to beat its supremum as $n \to \infty$, not its value at
+  $n_0$. Gabe concluded "$c_2 \ge 1/5$" from $n = 10$ when $c_2 \ge 1/2$ was required. **Worth a
+  quiz question**: give a $\Theta$ bound where $f/g$ is *decreasing* and check he flips which
+  constant the substitution determines.
+- **Stating the $O$ definition in full** (same lecture). Wrote it without the $f(n) \le c\,g(n)$
+  bound and without "for all $n \ge n_0$". Drill the full set-builder form, not the intuition.
+- **"Constants" vs "positive integers"** in asymptotic definitions - the constants are positive
+  *reals*; $c_1 = 1/5$ is a normal answer.
 
 -
