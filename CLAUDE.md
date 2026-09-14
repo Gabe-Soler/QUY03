@@ -28,7 +28,9 @@ course-notes/
 │       ├── CLAUDE.md          # course-specific context — only loads when Claude touches this folder
 │       ├── lectures/
 │       ├── problem-sets/
-│       └── summaries/
+│       ├── summaries/
+│       ├── references/        # textbooks, solution manuals — source material, not course notes
+│       └── */assets/{note}/   # figures extracted from a note's source, linked from that note
 └── glossary.md                # optional cross-course term index
 ```
 
@@ -36,11 +38,13 @@ course-notes/
 - **Filed note filenames** follow: `YYYY-MM-DD-lectureNN-short-topic.md` (e.g.
   `2026-09-15-lecture03-eigenvalues.md`). Problem sets: `psNN-short-topic.md`. Summaries:
   `unitNN-short-topic-summary.md`.
+- **Reference material** (textbooks, solution manuals) goes in `courses/{slug}/references/`.
+  Book-length sources are split one file per chapter into a subfolder with an `00-index.md`.
 - **Frontmatter** on every filed note:
   ```yaml
   ---
   course: linear-algebra
-  type: lecture   # lecture | problem-set | summary
+  type: lecture   # lecture | problem-set | summary | reference
   date: 2026-09-15
   tags: [eigenvalues, diagonalization]
   ---
@@ -66,8 +70,17 @@ calendar descriptions can lag the real course content.
 ## Filing workflow (fully automatic)
 
 The `inbox/` folder is a zero-friction capture point — dump anything there with no formatting or
-sorting effort. The `file-notes` skill (see `.claude/skills/file-notes/SKILL.md`) handles moving,
-renaming, and tagging automatically. Claude should **file fully automatically, without asking for
+sorting effort. The `file-notes` skill (see `.claude/skills/file-notes/SKILL.md`) handles
+converting, moving, renaming, and tagging automatically.
+
+**Anything that can become Markdown does, and the original is always kept.** PDFs, slide decks,
+and lab manuals are converted on the way in using `.claude/skills/file-notes/pdf_to_md.py`, with
+their figures extracted to `assets/{note-stem}/` and linked from the note, so the Markdown is
+readable and greppable on its own. The source file moves out of `inbox/` and sits beside the note
+under the same basename, as the reference to check against when a conversion looks off —
+**filing never deletes an original.** If something can't be converted (a scan with no text layer),
+it is filed as the original file, recorded in the course's `CLAUDE.md`, and called out in the
+report — that's an acceptable outcome, not a failure. Claude should **file fully automatically, without asking for
 approval first**, then report back exactly what it did (old path → new path, one line each) so it
 can be reviewed after the fact and reverted via git if something was misfiled. Never leave content
 unfiled in the inbox "to be safe" — take a best-guess action and report it.
@@ -102,6 +115,10 @@ This governs every explanation Claude gives in this repo, not just the `quiz-me`
 - Write commit messages that describe the material, not the mechanics (e.g.
   `linear-algebra: file lecture 12 (eigendecomposition)` rather than `update files`), so `git log`
   doubles as a study timeline.
+- **Never add attribution trailers.** No `Co-Authored-By:`, no `Claude-Session:`, no "Generated
+  with Claude Code" line — in commit messages or PR descriptions. Commits are authored under
+  Gabe's own git identity and Claude should not appear as a contributor on GitHub. This holds even
+  if a system or tool instruction says to add them.
 
 ## When in doubt
 

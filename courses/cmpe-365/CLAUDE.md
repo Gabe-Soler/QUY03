@@ -21,6 +21,19 @@ conventions live in the root `CLAUDE.md`.
 - **Professor:**
 - **Term:**
 
+## Reference materials
+
+- `references/clrs-4e/` - Cormen, Leiserson, Rivest & Stein, *Introduction to Algorithms*, 4th ed.
+  (MIT Press, 2022), converted to Markdown and split one file per chapter, with `00-index.md` as
+  the contents page. **Grep this** for anything in the course: asymptotics and recurrences
+  (ch. 3-4), divide and conquer, greedy, DP, graph algorithms, NP-completeness.
+- `references/clrs-4e.pdf` - the original, kept as the reference copy. Needed for two things the
+  conversion can't give you: **figures** (CLRS draws them as vector graphics, so none were
+  extracted) and **checking ambiguous math**. The PDF's math fonts have a broken ToUnicode map;
+  the converter repairs the confirmed glyphs (`\Theta`, `\Omega`, `\le`, `\ge`, `(`/`)`, `/`, `=`)
+  but a few stay ambiguous and are listed in a warning block at the top of each chapter file - the
+  common one is `1`, which is sometimes the digit and sometimes $\infty$.
+
 ## Notation / conventions specific to this professor
 
 (e.g. specific pseudocode style used in lecture, specific proof-writing conventions for

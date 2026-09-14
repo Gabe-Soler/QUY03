@@ -18,6 +18,20 @@ conventions live in the root `CLAUDE.md`.
 - **Professor:**
 - **Term:**
 
+## Reference materials
+
+- `references/saff-snider-fundamentals-of-complex-analysis-solutions.pdf` - solutions manual for
+  Saff & Snider, *Fundamentals of Complex Analysis with Applications to Engineering and Science*
+  (Pearson, 2003). 243 pp. Solutions only; the main textbook is not in the repo.
+
+  **Deliberately kept as a PDF - it cannot be converted here.** It is a pure scan: no text layer,
+  so nothing to extract. Image extraction also fails (the pages are CCITT G4 fax-encoded and PIL's
+  decoder returns blank images), and visual page rendering needs poppler/`pdftoppm`, which is not
+  installed. Converting it would require installing `pypdfium2` to render pages, then transcribing
+  243 pages of math by hand - worth doing per-chapter before the midterm, not in bulk. Ask Gabe
+  before installing anything. Until then, read it by opening the PDF directly, and it will not show
+  up in greps.
+
 ## Notation / conventions specific to this professor
 
 (e.g. whether $z = x+iy$ or $z = re^{i\theta}$ is the default working form in this course,
