@@ -53,7 +53,7 @@ The three simulation types covered:
 
 ## Part 1 — DC circuit analysis (`.op`)
 
-![Part 1 schematic: 10 V source, R3 = 1 k across it, R1 = 500 into the divider node, R2 = 500 to ground, R4 = 500 feeding the load R5 = 750](assets/ps00-lab-a0-ltspice-simulation/p002-02.png)
+![Part 1 schematic: 10 V source, R3 = 1 k across it, R1 = 500 into the divider node, R2 = 500 to ground, R4 = 500 feeding the load R5 = 750](assets/lab-a0-ltspice-simulation/p002-02.png)
 
 Draw and save the schematic above. Setup notes:
 
@@ -110,7 +110,7 @@ $R_{Th} = 750\left(\tfrac{5}{2.5} - 1\right) = 750\ \Omega$.
 
 ## Part 2 — Time domain (transient) analysis (`.tran`)
 
-![Part 2 schematic: V1 SINE(0 1 1k) driving R1 = 5k in series with C1 = 100n, Vout taken across the capacitor, .tran 5m](assets/ps00-lab-a0-ltspice-simulation/p003-03.png)
+![Part 2 schematic: V1 SINE(0 1 1k) driving R1 = 5k in series with C1 = 100n, Vout taken across the capacitor, .tran 5m](assets/lab-a0-ltspice-simulation/p003-03.png)
 
 Start a new circuit and draw the schematic above — a series RC with the output taken across the
 capacitor, i.e. an **RC low-pass**. Components:
@@ -163,7 +163,7 @@ Set up a new circuit and redraw the Part 2 circuit, but change the analysis type
 The output plots, on the same graph, (a) the **gain in decibels** and (b) the **phase angle in
 degrees** of the output with respect to the input — i.e. a Bode plot.
 
-![Expected AC sweep result: gain in dB and phase in degrees versus log frequency](assets/ps00-lab-a0-ltspice-simulation/p005-04.png)
+![Expected AC sweep result: gain in dB and phase in degrees versus log frequency](assets/lab-a0-ltspice-simulation/p005-04.png)
 
 Measure with the cursors:
 
@@ -185,7 +185,7 @@ $$f_c = \frac{1}{2\pi RC}, \qquad \phi = -\arctan(2\pi f_c RC)$$
   part of the cursor.
 - Measured values appear in the pop-up window.
 
-![LTspice probe cursors and the measurement pop-up window](assets/ps00-lab-a0-ltspice-simulation/p006-05.png)
+![LTspice probe cursors and the measurement pop-up window](assets/lab-a0-ltspice-simulation/p006-05.png)
 
 ---
 
