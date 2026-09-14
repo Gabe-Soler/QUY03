@@ -42,6 +42,30 @@ conventions live in the root `CLAUDE.md`.
   vendored `Cpp-Learing-Archive/` takes its worked source from, so that folder is directly useful
   for this course.
 
+## Programming background Gabe brings to this course
+
+**Gabe has never written C or C++.** His programming experience is essentially all **Python**
+(plus the quantitative/RL work described in the root `CLAUDE.md`). The root file's "comfortable with
+programming, don't over-simplify" note still holds for *concepts* — algorithms, complexity, the
+maths — but **does not** extend to C++ language mechanics, which are genuinely new as of
+2026-09-14.
+
+Practical consequences for explanations in this course:
+
+- **Teach C++ syntax and semantics from scratch the first time each appears**, and anchor them to
+  Python where an analogue exists (`vector` = `list`, `unordered_set` = `set`, range-based `for` =
+  `for x in xs`). Do not assume the C-family background that the course itself assumes via its
+  ELEC 278 / CISC 235 prerequisite.
+- **Concepts with no Python analogue need the most care** — the header/implementation split,
+  `#include` as literal text-paste, include guards, compile-vs-run-time errors, value semantics and
+  copying, references (`&`), `const` and `const` correctness, `mutable`, pointers, manual memory,
+  RAII, templates.
+- **Do not over-simplify the reasoning.** Complexity analysis, the coupon-collector maths behind
+  rejection sampling, modulo bias in `rand()` — all land fine and are worth including. The gap is
+  language mechanics, not rigour.
+- A long-form worked example of this pitch exists at
+  `assignments/assignment_1/cpp-primer-for-assignment-1.md` — reuse its Python→C++ framing.
+
 ## Folder layout for this course
 
 **This course uses `assignments/` instead of the repo-standard `problem-sets/`**, because each
@@ -121,7 +145,11 @@ Update every time new lecture material is filed (the `file-notes` skill does thi
   programmer a choice, even if this makes it possible to choose incorrectly".
 - **Assignment 1 issued** - Shakespearean insult generator, due **Wed 23 Sep 23:59**, out of 20.
   See `assignments/assignment_1/instructions.md`. Both supplied files are filed beside it; the
-  note carries the full API contract read off `TestInsultGenerator.cpp`. **The data file must be
+  note carries the full API contract read off `TestInsultGenerator.cpp`.
+  `assignments/assignment_1/cpp-primer-for-assignment-1.md` holds the language-level walkthrough
+  written for a Python background — `std::set` for unique+sorted in one pass, `<random>` vs
+  `rand() % n`, headers, exception classes, file I/O, `const`/`mutable`, plus the measured timing
+  (11 ms with `-O2`, 36 ms without) and the coupon-collector maths for the 10,000-insult run. **The data file must be
   opened as `InsultsSource.txt`** - it downloaded under a different name, and `initialize()` takes
   no arguments so the filename is hardcoded in Gabe's implementation.
 - **Next up:** "Basics" - data types, pointers, arrays. The demo programs in `code/` belong to it
@@ -131,4 +159,6 @@ Update every time new lecture material is filed (the `file-notes` skill does thi
 
 Concepts flagged as weak from prior `quiz-me` sessions.
 
--
+- **All of C++ as a language, as of 2026-09-14** — first exposure; see "Programming background"
+  above. Not yet attempted: writing a class, the `.h`/`.cpp` split, `const` correctness, references,
+  pointers. Trim this entry as specific topics stop being weak rather than leaving it blanket.

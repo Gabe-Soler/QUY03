@@ -12,6 +12,11 @@ tags: [assignment-1, cpp-classes, references, member-functions, vectors, strings
 > one-week emergency period after that. **Out of 20.** Submit only
 > `insultgenerator_netid.h` and `insultgenerator_netid.cpp` to OnQ.
 
+> 📘 **New to C++?** [`cpp-primer-for-assignment-1.md`](cpp-primer-for-assignment-1.md) in this
+> folder explains every language concept this assignment needs, starting from a Python background —
+> `std::set`, `<random>`, the `.h`/`.cpp` split, exception classes, file I/O, `const` correctness —
+> plus the design, the efficiency maths and measured timings.
+
 ## What it exercises
 
 References · member functions · vectors · strings · text file I/O · building a C++ class ·
