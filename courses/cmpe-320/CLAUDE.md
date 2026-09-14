@@ -18,6 +18,22 @@ conventions live in the root `CLAUDE.md`.
 - **Professor:**
 - **Term:**
 
+## Reference materials
+
+- `Cpp-Learing-Archive/` - worked C++ source from *Deitel, C++ How to Program* (10th ed.) and
+  *Malik, Data Structures Using C++* (2nd ed.). 733 `.cpp`/`.hpp` files organised by book and
+  chapter - useful for seeing idiomatic implementations of the things this course covers.
+
+  **Vendored, not a clone.** Originally cloned from
+  <https://github.com/saitcakir/Cpp-Learing-Archive> at commit `66acd515` (2020-07-08, branch
+  `master`); MIT licensed, Copyright (c) 2019 Erdem Ozgen - `LICENSE` is kept in the folder and
+  must stay. The nested `.git` was removed so the files live in this repo directly (an embedded
+  git repo pushes as an empty folder). That means `git pull` cannot update it: to refresh, re-clone
+  from the URL above and copy the files back over.
+
+  Compiled output (`bin/`, `obj/`, `*.o`, `*.exe`) is gitignored - it was 12 MB of Windows binaries
+  that cannot run on macOS and rebuild from source anyway.
+
 ## Notation / conventions specific to this professor
 
 (e.g. specific C++ style guide, UML conventions used for design docs, specific agile framework

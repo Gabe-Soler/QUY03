@@ -4,3 +4,12 @@ __pycache__/
 
 # macOS Finder metadata
 .DS_Store
+
+# Compiled output inside the vendored C++ archive (rebuilds from source;
+# the .exe files are Windows binaries and were 12 MB of the 16 MB clone)
+courses/cmpe-320/Cpp-Learing-Archive/**/bin/
+courses/cmpe-320/Cpp-Learing-Archive/**/obj/
+courses/cmpe-320/Cpp-Learing-Archive/**/*.o
+courses/cmpe-320/Cpp-Learing-Archive/**/*.exe
+courses/cmpe-320/Cpp-Learing-Archive/**/*.layout
+courses/cmpe-320/Cpp-Learing-Archive/**/*.depend
