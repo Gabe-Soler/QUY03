@@ -5,28 +5,68 @@ conventions live in the root `CLAUDE.md`.
 
 ## Course info
 
-- **Course code / name:** MTHE 351 (also cross-listed as STAT 351 in some calendars) —
-  Probability I
-- **Official description (typical for this course level):** Foundations of probability theory —
-  sample spaces, axioms of probability, conditional probability and independence, discrete and
-  continuous random variables and their distributions, expectation and variance, common
-  distributions, joint/marginal/conditional distributions for multiple random variables.
-- **Prerequisites:** (confirm against your calendar entry — typically a calculus prerequisite,
-  e.g. MTHE 217/APSC 172 level)
+- **Course code / name:** MTHE 351 — Probability I
+- **Calendar description:** Introduction to probability theory and its applications in engineering
+  science: basic concepts of probability, counting, conditional probability, Bayes' rule,
+  independence; probability models; random variables, distribution functions, probability mass
+  functions, probability density functions; expectation, variance, moments; jointly distributed
+  random variables; transformations of random variables. Distributions: Bernoulli, binomial,
+  geometric, negative binomial, Poisson, uniform, exponential, normal. Applications: elementary
+  stochastic processes, noisy communication channels. (Lec: 3, Lab: 0, Tut: 0.5).
+- **Format:** Lectures **Tue 8:30 (Dupuis 215), Wed 12:30 (Jeff 126), Fri 9:30 (Dupuis 215)**;
+  tutorial **Wed 13:30 (Jeff 126)**. 3.5 units.
 - **Exclusions:** ELEC 326 (Probability and Random Processes covers overlapping material)
-- **Typical topics** (fill in / correct against your actual syllabus): probability axioms and set
-  theory, combinatorics, conditional probability, Bayes' theorem, independence, discrete random
-  variables (Bernoulli, binomial, Poisson, geometric), continuous random variables (uniform,
-  exponential, normal/Gaussian), expectation and variance, moment generating functions, joint
-  distributions of two or more random variables, marginal and conditional distributions, the law
-  of large numbers, central limit theorem.
-- **Professor:**
-- **Term:**
+- **Actual topics** (from the Fall 2026 syllabus, with text chapters and weeks):
+  1. **Basic concepts of probability theory** - axioms of probability; counting; conditional
+     probability; law of total probability and Bayes' rule; independence of events.
+     (Ch. 1, SS2.1-2.4, Ch. 3 - weeks 1-4)
+  2. **Discrete random variables** - random variables; distribution functions; expectation and
+     variance; uniform, Bernoulli, binomial, negative binomial, Poisson, geometric.
+     (Ch. 4 and 6 - weeks 4-8)
+  3. **Continuous random variables** - probability density functions; functions of random
+     variables; expectation and variance; uniform, normal, exponential.
+     (Ch. 5, SS7.1, 7.2, 7.4 - weeks 8-10)
+  4. **Pairs of random variables** - joint distributions; independent random variables;
+     conditional distribution and expectation; functions of two random variables.
+     (SS8.1, 8.4, 8.5 - weeks 10-12)
+- **Professor:** **Fady Alajaji** - `fa@queensu.ca`, office hours **Wed 10:30-11:30**.
+  TA and marker: Ananya Omanwar (`22aso1@queensu.ca`); second marker: Jonas Schuppert
+  (`26qtd1@queensu.ca`).
+- **Term:** Fall 2026
+- **Assessment:** Homeworks **10%** (10 of them, via **Crowdmark**), Quiz 1 **20%**, Quiz 2 **20%**,
+  final exam **50%**. **Quiz 1: Fri 9 Oct 2026, 9:30-10:20. Quiz 2: Wed 4 Nov 2026, 13:30-14:20**
+  (in the tutorial slot, not a lecture slot). No makeups - a missed quiz with a valid reason has its
+  weight moved to the final. Final is run by the Exams Office.
+- **Textbook:** F. Ghahramani, *Fundamentals of Probability with Stochastic Processes*, **5th ed.**,
+  Chapman and Hall/CRC, 2024. All chapter references in the syllabus are to this edition.
+- **GenAI policy:** permitted **for homework assignments only**, as an educational tool; students
+  must critically evaluate output and ensure submitted work reflects their own understanding.
+  Nothing permissive is said about the quizzes or final, which are 90% of the grade.
+
+## Reference materials
+
+- `references/syllabus-f2026.md` (+ `.pdf`) - the Fall 2026 syllabus, converted and restructured.
+  **Check it before answering anything about dates or weighting.**
+- **The lecture notes are handwritten tablet notes, and this matters for every filed lecture.**
+  Each `lectures/*.pdf` is a stylus-written PDF whose only text layer is **Apple's handwriting
+  recognition** - it drops every space and mangles symbols (`AUB= [xeS:AonB(orboth)}` for
+  $A \cup B$). The filed `.md` beside each one is therefore a **reconstruction**, not a mechanical
+  extraction, and each carries a fidelity warning at the top. **The PDF is always the authority.**
+  Passages that could not be recovered confidently are left as `<!-- unclear: ... -->` comments -
+  never silently guessed.
+- **No figures can be extracted from the lecture PDFs.** The handwriting and the Venn diagrams are
+  **vector paths**, not embedded images, so `pdf_to_md.py` finds nothing to pull out, and this
+  environment has no PDF page renderer (`pdftoppm`/poppler, PyMuPDF and `pypdfium2` are all absent).
+  Every place the original draws a diagram is marked `**[Venn diagram in original]**` in the note.
+  Recovering the figures would need `pypdfium2` installed to rasterise pages - **ask Gabe first.**
 
 ## Notation / conventions specific to this professor
 
-(e.g. notation for expectation/variance used — $E[X]$ vs $\mathbb{E}[X]$, specific conventions for
-distinguishing random variables from their realizations)
+- **Juxtaposition means intersection:** the professor writes $AB$ for $A \cap B$ throughout, and
+  uses it heavily from Lecture 2 onward.
+- Set difference is written $A - B$ (with $A \setminus B$ given as an alternative).
+- The sample space is $S$ (not $\Omega$), the event space is $\mathcal{F}$, and a probability
+  space is the triplet $(S, \mathcal{F}, P)$.
 
 ## Covered so far
 
@@ -35,7 +75,45 @@ This course feeds directly into your existing quant/trading work (QUANTT, option
 research) — the `concept-map` skill is worth using here to trace how topics connect to material
 you already use in that context.
 
-- Week 1:
+- **Lecture 1 (2026-09-08):** *Introduction & review of basic set theory.* Why probability needs an
+  **axiomatic** treatment - intuitive/subjective probability varies between people, so the theory is
+  built from axioms (intuition still guides which axioms and how to interpret results). Then a full
+  set-theory review: membership and set-builder notation, the empty set, subsets, the **principle of
+  set equality** ($A = B \iff A \subseteq B$ and $B \subseteq A$), universe and complement, union,
+  intersection, disjoint/mutually exclusive sets, set difference ($A - B = A \cap B^c$), Cartesian
+  products, and the properties list - commutativity, associativity, distributivity, **De Morgan's
+  laws**.
+- **Lecture 2 (2026-09-09):** *Sample space and events* - begins **Unit I: Axioms of Probability**.
+  Random experiment; **sample space** $S$; **events** as subsets of $S$. The set-theory/probability
+  dictionary (universal set $\to$ sample space, subset $\to$ event, $S$ = **certain event**,
+  $\emptyset$ = **impossible/null event**), and events as statements ($E^c$ = does not occur,
+  $E \cup F$ = at least one, $E \cap F$ = both, $E - F$ = $E$ but not $F$, $E \subseteq F$ = "$E$
+  implies $F$"). Two ideas do the real work: **one experiment can have several valid sample spaces**
+  depending on what you record (3 coin flips: sequence vs. number of heads), and **sample spaces
+  need not be finite** (a continuous interval; the roll-until-6 space, which mixes countably many
+  finite blocks with infinite non-terminating sequences). Worked: "exactly one of $E$, $F$ occurs"
+  $= (E-F) \cup (F-E) = (E \cup F) - (E \cap F)$, proved algebraically.
+- **Lecture 3 (2026-09-11):** *Axioms of probability.* Why **relative frequency**
+  $P(E) = \lim_{n\to\infty} n(E)/n$ fails as a definition (can't repeat indefinitely; limit may not
+  exist; no guarantee of the same limit later). **Event space / $\sigma$-field** $\mathcal{F}$:
+  contains $S$, closed under complement and **countable** union; consequences ($\emptyset \in
+  \mathcal{F}$, closure under finite union and under finite/countable intersection via De Morgan);
+  examples $\{\emptyset, S\}$ and the power set. **The three axioms** - non-negativity, $P(S)=1$,
+  **countable additivity** - and the **probability space** $(S, \mathcal{F}, P)$. Derived:
+  **Theorem 1** $P(\emptyset)=0$; **finite additivity** (a *theorem*, derived from countable
+  additivity plus Theorem 1 - not an axiom); **Theorem 2** $P(E^c) = 1 - P(E)$; corollary
+  $0 \le P(E) \le 1$. **Equally likely outcomes** give $P(\{s_i\}) = 1/N$ and **Theorem 3**
+  $P(E) = |E|/N$ - the counting formula is a *theorem valid only under the equally-likely assumption
+  on a finite sample space*, not a definition. Examples: fair coin, sum of two dice $=7$, exactly 2
+  tails in 3 flips, and a **non**-equally-likely race worked straight from the axioms.
+- **Problem Set 0 issued** - *Practice* only, not submitted, not graded; the drill set for Lecture 1
+  (elementary set theory). `problem-sets/ps00-elementary-set-theory.md`.
+- **Homework 1 issued** - **due Mon 21 Sep 2026**, submitted via **Crowdmark**, 1 of 10 homeworks.
+  Covers lectures 2-3. `problem-sets/ps01-sample-spaces-events-and-axioms.md`. **Its source file was
+  misnamed `hw1_mthe_251.pdf`** - the document is headed "MTHE 351" and there is no MTHE 251; the
+  "251" is a typo for 351.
+- **Next up:** counting, conditional probability, law of total probability and Bayes' rule,
+  independence (weeks 1-4 material, Ch. 1 / SS2.1-2.4 / Ch. 3 of Ghahramani).
 
 ## Known trouble spots
 
