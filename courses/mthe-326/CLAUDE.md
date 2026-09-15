@@ -66,6 +66,20 @@ conventions live in the root `CLAUDE.md`.
   243 pages of math by hand - worth doing per-chapter before the midterm, not in bulk. Ask Gabe
   before installing anything. Until then, read it by opening the PDF directly, and it will not show
   up in greps.
+- `references/saff-snider-fundamentals-of-complex-analysis.pdf` - the main textbook itself
+  (3rd ed., 585 pp.), now in the repo alongside its solutions manual above.
+
+  **Also deliberately kept as a PDF, for a different reason: it's a scan with an OCR text layer of
+  unreliable quality**, not a proper conversion candidate. Its fonts are a single `/Type0 Invisible`
+  font over the whole document - the signature of a scanned book with a hidden OCR layer laid over
+  page images (Google Books / Archive.org style), rather than real typeset text. Spot-checking the
+  extracted text found OCR misreads throughout (e.g. "With an appendix" read as "Willi an
+  appendix"), including inside mathematical expressions where a misread digit or symbol is far more
+  costly than in prose. Converting it would just capture this same imperfect OCR text, not improve
+  it, so - per the same "a wrong symbol is worse than a gap" principle as the CLRS conversion - it
+  stays a PDF. Read it directly; a $199.99 print / $71.99 e-book rental copy is also on reserve at
+  Stauffer Library per the course outline above, which would be a more reliable source to transcribe
+  from than this scan if particular sections turn out to be worth filing properly.
 
 ## Notation / conventions specific to this professor
 

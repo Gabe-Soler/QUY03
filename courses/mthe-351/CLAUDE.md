@@ -47,6 +47,26 @@ conventions live in the root `CLAUDE.md`.
 
 - `references/syllabus-f2026.md` (+ `.pdf`) - the Fall 2026 syllabus, converted and restructured.
   **Check it before answering anything about dates or weighting.**
+- `references/ghahramani-5e-fundamentals-of-probability.pdf` - the course textbook (F. Ghahramani,
+  *Fundamentals of Probability with Stochastic Processes*, 5th ed.), matching the syllabus's chapter
+  references (Ch. 1/3 weeks 1-4, Ch. 4/6 weeks 4-8, Ch. 5/§7 weeks 8-10, §8 weeks 10-12). 699 pages,
+  confirmed against the syllabus's own outline (bookmarks: Ch. 1 Axioms of Probability, Ch. 2
+  Combinatorial Methods, Ch. 3 Conditional Probability... matches "Ch 1, §2.1-2.4, Ch 3" for weeks
+  1-4 given the book's own ch. 2 = counting).
+
+  **Deliberately kept as a PDF - conversion was attempted and discarded.** This is an old
+  TeX/dvips-produced PDF: its math fonts (CMMI10, CMSY10, CMEX10, MSAM10 - classic Computer Modern
+  math italic/symbol/extension fonts) are embedded with **no ToUnicode CMap at all**, so text
+  extraction has nothing correct to fall back on and silently substitutes wrong-but-plausible
+  Unicode letters for math variables and symbols throughout - e.g. the sample space "S" extracts as
+  "τ", subset "⊆" extracts as "⊃" (the **opposite** direction), "∈" extracts as arbitrary Greek
+  letters. This is pervasive (every math variable and symbol in the book), not isolated, and differs
+  from CLRS's issue (which had a *repairable* broken ToUnicode map): here there is nothing to repair
+  from, only glyph-shape identification per font, per the `build_glyph_map.py` workflow - across
+  six different fonts with no existing per-book map, which is a substantial undertaking not
+  attempted here. **A silently wrong symbol is worse than an unconverted PDF**, so the conversion
+  was discarded rather than filed. Read this one from the PDF directly; ask before starting a
+  glyph-map pass on it if reliable searchable notes from it become worth the investment.
 - **The lecture notes are handwritten tablet notes, and this matters for every filed lecture.**
   Each `lectures/*.pdf` is a stylus-written PDF whose only text layer is **Apple's handwriting
   recognition** - it drops every space and mangles symbols (`AUB= [xeS:AonB(orboth)}` for
