@@ -110,8 +110,19 @@ recursion/recurrence understanding from earlier weeks).
   inside equations**, and **transitivity / reflexivity / symmetry** (notably
   $f = O(g) \iff g = \Omega(f)$). The slide deck's two sets of practice questions are the most
   test-like material available so far - **use them for `quiz-me` before the Sep 24 test.**
-- **Not yet covered:** solving recurrences (ch. 4), referenced forward by the ch. 2 summary but not
-  yet taught.
+- **Lecture 4 (2026-09-15):** opened with the **lecture 3 practice questions** (unanswered on the
+  slides) - see `lectures/2026-09-15-lecture04-recursion-complexity.md` for Gabe's own attempt and
+  `summaries/test1-chapters-2-3-study-guide.md` for the full key. Then starts **Ch. 4** proper:
+  recursion and base cases; merge sort as the running recursive example; turning a recursive
+  algorithm into a **recurrence relation**; solving by **substitution** (expand the self-reference,
+  spot the pattern) - worked for a straight-line recursion ($T(n)=c_2+T(n-1) \to \Theta(n)$) and one
+  with an inner loop ($T(n)=c_2+c_3n+T(n-1) \to \Theta(n^2)$, the same arithmetic-series shape as
+  insertion sort's worst case). **This is Test 2 scope (8 Oct), not Test 1.**
+- **Test 1 study guide filed** (2026-09-15):
+  `summaries/test1-chapters-2-3-study-guide.md` - consolidated notes and a worked answer key for
+  Ch. 2-3, covering lectures 1-3 plus the CLRS reference chapters.
+- **Not yet covered:** the recursion-tree method and the master theorem for solving recurrences
+  properly (rest of ch. 4).
 
 ## Known trouble spots
 
