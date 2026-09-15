@@ -112,6 +112,16 @@ you already use in that context.
   Covers lectures 2-3. `problem-sets/ps01-sample-spaces-events-and-axioms.md`. **Its source file was
   misnamed `hw1_mthe_251.pdf`** - the document is headed "MTHE 351" and there is no MTHE 251; the
   "251" is a typo for 351.
+- **Homework 1 in progress.** Gabe's own attempt is
+  `problem-sets/Hw1_MTHE351_Gabe_Soler.md` (submission-style filename, deliberately kept outside the
+  `psNN-` convention). Worked solutions to all six questions are in
+  `problem-sets/ps01-sample-spaces-events-and-axioms-worked.md` - **mine, not an official key**;
+  the course issues none. The syllabus permits GenAI **for homework only**, so this is within policy,
+  but submitted work must be his own.
+
+  > ⚠️ **Misconception caught on Q1 (2026-09-14):** the first attempt enumerated the urn draws
+  > **with** replacement (outcomes like `[1,1,1,1,1]`), where the question says **without**
+  > replacement. Worth re-checking on the next sampling question - see "Known trouble spots".
 - **Next up:** counting, conditional probability, law of total probability and Bayes' rule,
   independence (weeks 1-4 material, Ch. 1 / SS2.1-2.4 / Ch. 3 of Ghahramani).
 
@@ -121,4 +131,10 @@ Concepts flagged as weak from prior `quiz-me` sessions — setting up the correc
 combinatorics problems and correctly identifying independence vs. mutual exclusivity are common
 sticking points.
 
--
+- **Sampling with vs. without replacement** (HW 1 Q1, 2026-09-14). Enumerated the sample space with
+  repeated labels when the question specified drawing **without** replacement. **Worth a quiz
+  question:** give two near-identical urn problems differing only in replacement and check the
+  sample-space sizes come out different.
+- **Boundary wording in stopping rules** (same question). "Exceeds 4" means **strictly** $> 4$, so a
+  first draw of 4 does *not* stop the experiment - the question spells this out in a bracketed note
+  precisely because it decides three outcomes. Read stopping conditions literally.
