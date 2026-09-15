@@ -33,8 +33,16 @@ course-notes/
 │       ├── references/        # textbooks, solution manuals — source material, not course notes
 │       ├── code/              # source files handed out in lecture, kept compilable + an index
 │       └── */assets/{note}/   # figures extracted from a note's source, linked from that note
+├── assessment-calendar.md     # cross-course calendar of everything that carries marks
 └── glossary.md                # optional cross-course term index
 ```
+
+- **`assessment-calendar.md`** is the single place every graded deadline lives — assignments,
+  tests, quizzes, midterms, project deliverables and exams for all six courses, in date order,
+  with the weight of each. **Update it whenever a syllabus is filed or a date is confirmed**, and
+  keep the per-course syllabus in `courses/{slug}/references/` as the authority it is derived
+  from. It also carries a "still unknown" section — dates that are genuinely not published yet
+  (final exams, ELEC 371 lab sessions) belong there rather than being guessed.
 
 - **Course slugs** are lowercase-kebab-case (e.g. `linear-algebra`, `stochastic-processes`).
 - **Cross-listed courses keep one folder, under the CMPE code** (`cmpe-320`, `cmpe-365`), since
