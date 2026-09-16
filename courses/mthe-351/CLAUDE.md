@@ -142,6 +142,23 @@ you already use in that context.
   > ⚠️ **Misconception caught on Q1 (2026-09-14):** the first attempt enumerated the urn draws
   > **with** replacement (outcomes like `[1,1,1,1,1]`), where the question says **without**
   > replacement. Worth re-checking on the next sampling question - see "Known trouble spots".
+- **Lecture 4 (2026-09-15):** *Corollaries of the axioms.* **Monotonicity**
+  ($E\subseteq F \Rightarrow P(E)\le P(F)$, proved by partitioning $F=E\cup(F-E)$) and its
+  corollary $P(F-E)=P(F)-P(E)$. **Two-event inclusion-exclusion**
+  $P(E\cup F)=P(E)+P(F)-P(EF)$, and its corollary the **union bound**
+  $P(E\cup F)\le P(E)+P(F)$. The **general $n$-event inclusion-exclusion principle**, applied to
+  two worked examples: divisible-by-5-or-7 (32%) and a hotel-smokers counting problem (37 guests)
+  that links the probabilistic inclusion-exclusion back to the **counting formula** $P(A)=|A|/N$
+  from lecture 3. Then **continuity of probability**: increasing/decreasing sequences of events,
+  $\lim E_n$ defined via $\bigcup$/$\bigcap$, and the theorem $\lim P(E_n)=P(\lim E_n)$ (proved via
+  a disjointifying partition $A_n=E_n-E_{n-1}$ plus countable additivity - the first real use of
+  *countable*, not just finite, additivity). Applied to build **continuous probability on an
+  interval** $(a,b)$: $P([\alpha,\beta))=(\beta-\alpha)/(b-a)$, **any single point has probability
+  exactly 0** (via a shrinking decreasing sequence of intervals), and the resulting fact that
+  **open/half-open/closed intervals of the same endpoints all have the same probability** - with
+  the striking corollary that **a probability-1 event need not equal the whole sample space**
+  ($(a,b)$ and $[a,b)$ both have probability 1). Closes with the almost-punctual-bus example
+  (answer $8/15$).
 - **Next up:** counting, conditional probability, law of total probability and Bayes' rule,
   independence (weeks 1-4 material, Ch. 1 / SS2.1-2.4 / Ch. 3 of Ghahramani).
 
