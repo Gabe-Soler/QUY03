@@ -10,6 +10,8 @@ tags: [ltspice, spice, thevenin-equivalent, operating-point, transient-analysis,
 > Source: `ENPH334LabA0_Sim3.pdf` (lab manual, "Updated Sept. 2022"). Filed source PDF:
 > [`ps00-lab-a0-ltspice-simulation.pdf`](./ps00-lab-a0-ltspice-simulation.pdf)
 > Companion slides: [`../lectures/2023-09-12-lecture00-lab-a0-intro-slides.md`](../lectures/2023-09-12-lecture00-lab-a0-intro-slides.md)
+> **Prelab:** all three tasks' theoretical calculations, fully derived and ready for the notebook,
+> are in [`lab-a0-prelab-calculations.md`](lab-a0-prelab-calculations.md).
 
 ## TLDR
 

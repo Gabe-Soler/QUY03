@@ -115,6 +115,11 @@ Update every time new lecture material is filed (the `file-notes` skill does thi
 - **Lab A0 (LTspice), assigned Week 1:** the three SPICE analyses - `.op` (DC operating point),
   `.tran` (time-domain transient), `.ac` (frequency-domain sweep) - applied to a Thevenin
   resistor network and an RC low-pass ($R = 5$ k$\Omega$, $C = 100$ nF, $f_c \approx 318$ Hz).
+  **Prelab calculations filed** (2026-09-15): `labs/lab-a0-prelab-calculations.md` - all three
+  tasks derived in full ($V_{Th}=5$ V, $R_{Th}=750\,\Omega$ for the Thevenin network; $A_v=0.303$,
+  $\phi=-72.3°$ at 1 kHz for the RC low-pass; $f_c=318.3$ Hz with phase always $-45°$ at cutoff for
+  any single-pole RC low-pass). The theory half only - still needs the actual LTspice runs to
+  compare against.
 - **Week 1 readings:** Storey chapters 3-6. Thevenin's theorem and AC/phasor analysis are flagged
   as the prerequisites for the first two labs.
 - **Week 1 problem sets filed (both streams).** `problem-sets/ps01-week1-problems-dc-fundamentals`
