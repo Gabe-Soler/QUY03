@@ -111,8 +111,11 @@ recursion/recurrence understanding from earlier weeks).
   $f = O(g) \iff g = \Omega(f)$). The slide deck's two sets of practice questions are the most
   test-like material available so far - **use them for `quiz-me` before the Sep 24 test.**
 - **Lecture 4 (2026-09-15):** opened with the **lecture 3 practice questions** (unanswered on the
-  slides) - see `lectures/2026-09-15-lecture04-recursion-complexity.md` for Gabe's own attempt and
-  `summaries/test1-chapters-2-3-study-guide.md` for the full key. Then starts **Ch. 4** proper:
+  slides) - `lectures/2026-09-15-lecture04-recursion-complexity.md` has Gabe's own attempt, now
+  cleaned via `/clean_lecture` (2026-09-16): one `\theta`→`\Theta` typo, and every blank/incomplete
+  answer filled in and marked `[added]` - no disagreements found, everything he wrote out in full
+  was correct, just unfinished. `summaries/test1-chapters-2-3-study-guide.md` has the fuller
+  worked reasoning. Then starts **Ch. 4** proper:
   recursion and base cases; merge sort as the running recursive example; turning a recursive
   algorithm into a **recurrence relation**; solving by **substitution** (expand the self-reference,
   spot the pattern) - worked for a straight-line recursion ($T(n)=c_2+T(n-1) \to \Theta(n)$) and one
