@@ -49,3 +49,7 @@ Theta -> both*
 5. 
 6. 
 7. 
+
+### Recursion
+
+- when a function calls itself 
